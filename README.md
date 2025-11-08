@@ -37,9 +37,20 @@
 1. کلون کردن پروژه:
 
 ```bash
-git clone https://github.com/yourusername/landing_project.git
+git clone https://github.com/saeidparishan/Landing-Page-Project.git
 cd landing_project
   ```
+تنظیم فایل .env (در ریشه‌ی پروژه):
+DJANGO_DEBUG=True
+POSTGRES_DB= 
+POSTGRES_USER=
+POSTGRES_PASSWORD=
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+REDIS_URL=redis://localhost:6379/0
+MONGO_URI=mongodb://localhost:27017/landing_logs
+DJANGO_SETTINGS_MODULE=core.settings.develop
+
 ایجاد فایل محیطی و ویرایش متغیرها در صورت نیاز:
 cp .env.example .env
 
