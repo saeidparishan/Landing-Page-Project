@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "9b2f6a4b-ccb8-41d9-90f3-9e8acec10d13",
+		"name": "Landing Page API",
+		"description": "مستندات API برای ثبت شماره موبایل\n\nContact Support:\n Email: saeidparishan@gmail.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39436653"
+	},
+	"item": [
+		{
+			"name": "submit-phone",
+			"item": [
+				{
+					"name": "submit-phone create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/submit-phone/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"submit-phone",
+								""
+							]
+						},
+						"description": "ثبت شماره موبایل با پاسخ فوری و ذخیره‌سازی آسنکرون"
+					},
+					"response": [
+						{
+							"name": "Untitled Response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Basic <credentials>",
+										"description": "Added as a part of security scheme: basic"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/submit-phone/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"submit-phone",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "username",
+				"value": "{{basicAuthUsername}}",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "{{basicAuthPassword}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000/api/v1"
+		}
+	]
+}
