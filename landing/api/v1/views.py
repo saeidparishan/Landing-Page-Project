@@ -1,11 +1,13 @@
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
-from django_ratelimit.decorators import ratelimit
 from django.utils.decorators import method_decorator
+from django_ratelimit.decorators import ratelimit
+from rest_framework import status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from landing.tasks import process_phone_submission
 
 from .serialziers import PhoneSerializer
-from landing.tasks import process_phone_submission
+
 
 @method_decorator(ratelimit(key='ip', rate='10/m', block=True), name='dispatch')
 class SubmitPhoneAPIView(APIView):
@@ -25,6 +27,5 @@ class SubmitPhoneAPIView(APIView):
         process_phone_submission.delay(phone, ip, user_agent)
 
         return Response(
-            {"detail": "شماره شما با موفقیت ثبت شد"},
-            status=status.HTTP_202_ACCEPTED
+            {"detail": "شماره شما با موفقیت ثبت شد"}, status=status.HTTP_202_ACCEPTED
         )

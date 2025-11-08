@@ -1,5 +1,8 @@
-from .base import *
+# flake8: noqa
+
 import os
+
+from .base import *
 
 DEBUG = False
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost").split(",")
@@ -32,7 +35,7 @@ LOGGING = {
         'file': {
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': '/var/log/landing/requests.log',
-            'maxBytes': 10*1024*1024,  # 10MB per file
+            'maxBytes': 10 * 1024 * 1024,  # 10MB per file
             'backupCount': 5,
             'formatter': 'json',
         },

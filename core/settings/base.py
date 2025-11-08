@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "insecure-key-for-dev")
@@ -19,10 +18,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
     # third-party
     'rest_framework',
-
     # local
     'landing',
 ]
@@ -36,7 +33,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
     'landing.middleware.RequestLoggingMiddleware',
 ]
 
@@ -57,7 +53,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 
 # Password validation
@@ -89,7 +84,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 
 WSGI_APPLICATION = 'core.wsgi.application'

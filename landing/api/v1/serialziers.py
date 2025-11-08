@@ -1,5 +1,7 @@
-from rest_framework import serializers
 import re
+
+from rest_framework import serializers
+
 
 class PhoneSerializer(serializers.Serializer):
     phone = serializers.CharField(max_length=20)

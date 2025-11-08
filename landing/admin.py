@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from .models import PhoneSubmission
 
 
@@ -11,12 +12,8 @@ class PhoneSubmissionAdmin(admin.ModelAdmin):
     readonly_fields = ("created_at",)
 
     fieldsets = (
-        ("اطلاعات کاربر", {
-            "fields": ("phone", "processed")
-        }),
-        ("اطلاعات فنی درخواست", {
-            "fields": ("ip", "user_agent", "created_at")
-        }),
+        ("اطلاعات کاربر", {"fields": ("phone", "processed")}),
+        ("اطلاعات فنی درخواست", {"fields": ("ip", "user_agent", "created_at")}),
     )
 
     def has_add_permission(self, request):

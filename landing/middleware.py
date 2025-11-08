@@ -1,9 +1,11 @@
-import time
 import logging
-from django.utils.deprecation import MiddlewareMixin
+import time
+
 from django.conf import settings
+from django.utils.deprecation import MiddlewareMixin
 
 logger = logging.getLogger('landing.requests')
+
 
 class RequestLoggingMiddleware(MiddlewareMixin):
     def process_request(self, request):
